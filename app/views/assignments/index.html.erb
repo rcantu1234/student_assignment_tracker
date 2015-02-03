@@ -2,9 +2,10 @@
 
 <h1>Listing Assignments</h1>
 
-<table>
+<table class="table table-hover table-bordered">
   <thead>
     <tr>
+      <th>Student</th>
       <th>Title</th>
       <th>Grade</th>
       <th>Completed</th>
@@ -16,12 +17,13 @@
   <tbody>
     <% @assignments.each do |assignment| %>
       <tr>
+        <td><%= link_to(assignment.student.try(:name), assignment.student) %></td>
         <td><%= assignment.title %></td>
         <td><%= assignment.grade %></td>
         <td><%= assignment.completed %></td>
         <td><%= assignment.late %></td>
-        <td><%= link_to 'Show', assignment %></td>
-        <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
+        <td><%= link_to 'Show', assignment %> </td>
+        <td><%= link_to 'Edit', edit_assignment_path(assignment) %> </td>
         <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
