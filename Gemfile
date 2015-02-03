@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
-gem 'thin'
+gem 'puma'
 
 gem 'rails_12factor'
 
@@ -43,9 +43,8 @@ gem 'bootstrap-sass'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
   gem 'better_errors'
-
+  gem 'binding_of_caller'
   gem 'faker'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
